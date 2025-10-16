@@ -1,52 +1,51 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+/**
+ * Class User
+ * 
+ * @property int $id
+ * @property string $name
+ * @property string $surname
+ * @property string|null $addresse
+ * @property string $mdp
+ * @property int|null $team_id
+ * @property bool|null $is_admin
+ * @property Carbon $created_at
+ * 
+ * @property Team|null $team
+ *
+ * @package App\Models
+ */
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+	protected $table = 'users';
+	public $timestamps = false;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'surname',
-        'email',
-        'password',
-        'team_id'
-    ];
+	protected $casts = [
+		'team_id' => 'int',
+		'is_admin' => 'bool'
+	];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+	protected $fillable = [
+		'name',
+		'surname',
+		'addresse',
+		'mdp',
+		'team_id',
+		'is_admin'
+	];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    // Un utilisateur à une équipe
-     public function team()
-    {
-        return $this->belongsTo(Team::class, 'team_id');
-    }
+	public function team()
+	{
+		return $this->belongsTo(Team::class);
+	}
 }

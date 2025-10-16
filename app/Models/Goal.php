@@ -1,31 +1,50 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Goal
+ *
+ * @property int $id
+ * @property int $id_equipe
+ * @property int $id_match
+ * @property float|null $vitesse
+ *
+ * @property Team $team
+ * @property Match $match
+ *
+ * @package App\Models
+ */
 class Goal extends Model
 {
-    use HasFactory;
+	protected $table = 'goal';
+	public $timestamps = false;
 
-    protected $table = 'goal';
+	protected $casts = [
+		'id_equipe' => 'int',
+		'id_match' => 'int',
+		'vitesse' => 'float'
+	];
 
-    protected $fillable = [
-        'vitesse',
-        'id_equipe',
-        'id_match',
-    ];
+	protected $fillable = [
+		'id_equipe',
+		'id_match',
+		'vitesse'
+	];
 
-    // Le but appartient à une équipe
-    public function equipe()
-    {
-        return $this->belongsTo(Team::class, 'id_equipe');
-    }
+	public function team()
+	{
+		return $this->belongsTo(Team::class, 'id_equipe');
+	}
 
-    // Le but appartient à un match
-    public function match()
-    {
-        return $this->belongsTo(Matches::class, 'id_match');
-    }
+	public function match()
+	{
+		return $this->belongsTo(Matches::class, 'id_match');
+	}
 }
