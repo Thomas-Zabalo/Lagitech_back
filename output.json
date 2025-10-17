@@ -1,0 +1,22 @@
+[GET] : /addresses
+[ {
+  "idAddress" : 2,
+  "city" : "Lyon",
+  "state" : "Auvergne-Rhône-Alpes",
+  "zip" : "69001"
+}, {
+  "idAddress" : 8,
+  "city" : "Bagnères-de-Luchon",
+  "state" : "Haute-Garonne",
+  "zip" : "31042"
+}, {
+  "idAddress" : 1,
+  "city" : "Montauban",
+  "state" : "Occitanie",
+  "zip" : "82000"
+}, {
+  "idAddress" : 3,
+  "city" : "Toulousa",
+  "state" : "Occitanie",
+  "zip" : "31000"
+} ]
