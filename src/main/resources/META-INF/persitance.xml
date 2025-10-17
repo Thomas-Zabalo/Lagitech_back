@@ -2,11 +2,11 @@
     <persistence-unit name="lagitech">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.workshop.employee_api.models.Team</class>
-        <class>com.workshop.employee_api.models.User</class>
-        <class>com.workshop.employee_api.models.Goal</class>
-        <class>com.workshop.employee_api.models.Match</class>
-        <class>com.workshop.employee_api.models.Babyfoot</class>
+        <class>com.workshop.lagitech.models.Team</class>
+        <class>com.workshop.lagitech.models.User</class>
+        <class>com.workshop.lagitech.models.Goal</class>
+        <class>com.workshop.lagitech.models.Match</class>
+        <class>com.workshop.lagitech.models.Babyfoot</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
