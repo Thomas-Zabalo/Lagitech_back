@@ -2,18 +2,18 @@
     <persistence-unit name="lagitech">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.workshop.employee_api.models.Team</class>
-        <class>com.workshop.employee_api.models.User</class>
-        <class>com.workshop.employee_api.models.Goal</class>
-        <class>com.workshop.employee_api.models.Match</class>
-        <class>com.workshop.employee_api.models.Babyfoot</class>
+        <class>com.workshop.lagitech.models.Team</class>
+        <class>com.workshop.lagitech.models.User</class>
+        <class>com.workshop.lagitech.models.Goal</class>
+        <class>com.workshop.lagitech.models.Match</class>
+        <class>com.workshop.lagitech.models.Babyfoot</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost/lagitech"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.100.27:5432/postgres"/>
+            <property name="javax.persistence.jdbc.user" value="dev_user"/>
+            <property name="javax.persistence.jdbc.password" value="dev1234"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
         </properties>
     </persistence-unit>
 </persistence>

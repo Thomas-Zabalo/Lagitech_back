@@ -1,18 +1,15 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3306/lagitech
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: root
-    password:
+    url: jdbc:postgresql://192.168.100.27:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    username: dev_user
+    password: dev1234
   jpa:
     show-sql: true
-    database: mysql
-    database-platform: org.hibernate.dialect.MariaDBDialect
-    properties:
-      hibernate:
-        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+      format_sql: true
 
 jwt:
   secret: VotreCleSecreteTresLonguePourJWT32Caracteres

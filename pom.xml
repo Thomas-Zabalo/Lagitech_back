@@ -107,9 +107,9 @@
 
 
         <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version> <!-- ou dernière version stable -->
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
