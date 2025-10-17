@@ -32,6 +32,12 @@ public class MatchController {
         return matchService.getMatchById(id);
     }
 
+
+    @PutMapping("/{id}/start")
+    public Match startMatch(@PathVariable Long id) {
+        return matchService.startMatch(id);
+    }
+
     @PostMapping
     public Match createMatch(@RequestBody Map<String, Long> request) {
         Long team1Id = request.get("equipe_1");
