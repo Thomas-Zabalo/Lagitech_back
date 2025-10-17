@@ -29,7 +29,7 @@ public class Match {
     @JoinColumn(name = "id_equipe_2")
     private Team equipe_2;
 
-    private Integer vitesse_max;
+    private Float vitesse_max = 0f;
 
     @ManyToOne
     @JoinColumn(name = "babyfoot_id")
