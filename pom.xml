@@ -39,6 +39,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+
         <!-- Spring Security, JPA, Web, Lombok (optionnel) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
